@@ -7,8 +7,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    
+class ViewController: UIViewController{
+    var darkMode = false
     @IBOutlet weak var firstNameTextInput: UITextField!
     @IBOutlet weak var lastNameTextInput: UITextField!
     @IBOutlet weak var schoolNameTextInput: UITextField!
@@ -17,13 +17,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var numPetsCounter: UILabel!
     @IBOutlet weak var numPetsStepper: UIStepper!
     @IBOutlet weak var morePetsSwitch: UISwitch!
+    @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var themeButton: UIButton!
+    
+    @IBAction func updateTheme(_ sender: UIButton) {
+        if darkMode == false{
+            greyTheme()
+        } else{
+            lightTheme()
+        }
+    }
     
     @IBAction func updateStepperCount(_ sender: UIStepper) {
         numPetsCounter.text = "\(Int(sender.value))"
     }
-    
     @IBAction func introduceSelfDidTapped(_ sender: UIButton) {
-        
         // saves the segmented option as a string for the year
         let year = yearSegment.titleForSegment(at: yearSegment.selectedSegmentIndex)
         // introduction message and used .lowercased() for the message to have proper grammar
@@ -45,8 +53,8 @@ class ViewController: UIViewController {
             present(alertController, animated: true, completion: nil)
             defaultFields()
         }
-        
     }
+    
     func defaultFields(){ //reset fields to default
         firstNameTextInput.text = ""
         lastNameTextInput.text = ""
@@ -56,19 +64,59 @@ class ViewController: UIViewController {
         yearSegment.selectedSegmentIndex = 0
         morePetsSwitch.isOn = false
     }
+    func greyTheme(){
+        darkMode = true
+        view.backgroundColor = UIColor.gray
+        firstNameTextInput.textColor = UIColor.white
+        firstNameTextInput.backgroundColor = UIColor.gray
+        
+        lastNameTextInput.textColor = UIColor.white
+        lastNameTextInput.backgroundColor = UIColor.gray
+        
+        schoolNameTextInput.textColor = UIColor.white
+        schoolNameTextInput.backgroundColor = UIColor.gray
+        
+        majorTextInput.textColor = UIColor.white
+        majorTextInput.backgroundColor = UIColor.gray
+        
+        yearSegment.selectedSegmentTintColor = UIColor.systemOrange
+        themeButton.tintColor = UIColor.systemOrange
+        submitButton.tintColor = UIColor.systemOrange
+        morePetsSwitch.onTintColor = UIColor.systemOrange
+        
+    }
+    func lightTheme(){
+        darkMode = false
+        view.backgroundColor = UIColor.white
+        firstNameTextInput.textColor = UIColor.black
+        firstNameTextInput.backgroundColor = UIColor.white
+        
+        lastNameTextInput.textColor = UIColor.black
+        lastNameTextInput.backgroundColor = UIColor.white
+        
+        schoolNameTextInput.textColor = UIColor.black
+        schoolNameTextInput.backgroundColor = UIColor.white
+        
+        majorTextInput.textColor = UIColor.black
+        majorTextInput.backgroundColor = UIColor.white
+        
+        yearSegment.selectedSegmentTintColor = UIColor.systemBlue
+        themeButton.tintColor = UIColor.systemBlue
+        submitButton.tintColor = UIColor.systemBlue
+        morePetsSwitch.onTintColor = UIColor.systemBlue
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        // Adds clear button to text fields
         firstNameTextInput.clearButtonMode = .always
         lastNameTextInput.clearButtonMode = .always
         schoolNameTextInput.clearButtonMode = .always
         majorTextInput.clearButtonMode = .always
         
-        
-        
-        
-        
-    }
+        //updates background color based on user input
+}
+
 }
 
