@@ -7,7 +7,7 @@ This app takes in the name, school, major, class, and how many pets they own and
 ### App Walk-though
 
 
-<!-- <img src="https://github.com/Dariont25/IOS-Prework/blob/main/CodePathDemo.gif" width=200><br> -->
+![](https://github.com/Dariont25/IOS-Prework/blob/main/CodePathDemo.gif)
 
 
 ### Required Features
