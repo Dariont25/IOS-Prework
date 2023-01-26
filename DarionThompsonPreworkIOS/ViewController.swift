@@ -8,7 +8,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     
     @IBOutlet weak var firstNameTextInput: UITextField!
     @IBOutlet weak var lastNameTextInput: UITextField!
@@ -24,7 +23,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func introduceSelfDidTapped(_ sender: UIButton) {
-       
+        
         // saves the segmented option as a string for the year
         let year = yearSegment.titleForSegment(at: yearSegment.selectedSegmentIndex)
         // introduction message and used .lowercased() for the message to have proper grammar
@@ -46,7 +45,7 @@ class ViewController: UIViewController {
             present(alertController, animated: true, completion: nil)
             defaultFields()
         }
-
+        
     }
     func defaultFields(){ //reset fields to default
         firstNameTextInput.text = ""
@@ -65,8 +64,11 @@ class ViewController: UIViewController {
         lastNameTextInput.clearButtonMode = .always
         schoolNameTextInput.clearButtonMode = .always
         majorTextInput.clearButtonMode = .always
+        
+        
+        
+        
+        
     }
-
-
 }
 
