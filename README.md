@@ -24,4 +24,4 @@ This app takes in the name, school, major, class, and how many pets they own and
 
 - [ ] 1. User can tap a button to change the color of the background view
 - [x] 3. User can select on additional buttons that provide more info about the user. Example: more textfields, a different alert box, etc.
-- [x] 4. Changed the text font and colors of the segmented control and switch
+- [x] 4. Changed the text font, colors of the segmented control and switch, added a clear text button for input fields. 
